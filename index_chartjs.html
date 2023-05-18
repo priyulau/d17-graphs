@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<p style="text-align: center;">Average 30-Year Mortgage Rates Since 2000</p><br>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = [00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22];
+const yValues = [8.05,6.97,6.54,5.83,5.84,6.41,6.34,6.03,5.04,4.69,4.45,3.66,3.98,4.17,
+3.85,3.65,3.99,4.54,3.94,3.10,2.96,5.34];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:10}}],
+    }
+  }
+});
+</script>
+</body>
+</html>
+
+

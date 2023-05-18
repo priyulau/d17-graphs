@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+
+<!--Sets the chart type and style-->
+<div
+id="myChart" style="width:100%; max-width:600px; height:500px;">
+</div>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+//Input data set here
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Race', '%'],
+  ['White',66.2],
+  ['Asian',15.0],
+  ['Hispanic',8.9],
+  ['Black',5.1],
+  ['Unknown',4.7],
+  ['American Indian',0.1]
+]);
+
+//Sets the title of the graph and defines it as the "options" variable
+var options = {
+  title:'Computer Programmers in the U.S., By Race',
+  is3D:true
+};
+
+//Produces the graph visual 
+var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
+
+
+
